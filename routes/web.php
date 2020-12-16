@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/biography', function () {
     return view('BioForm');
 });
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
