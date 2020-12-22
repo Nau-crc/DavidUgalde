@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+USE Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/biography', function () {
-    return view('BioForm');
+Route::get('/pricing', function () {
+    return view('pricing');
 });
 
 Auth::routes();
