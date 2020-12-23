@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pricing', function () {
-    return view('pricing');
+Route::get('/courses', function () {
+    return view('courses.courses');
 });
 
 Auth::routes();
