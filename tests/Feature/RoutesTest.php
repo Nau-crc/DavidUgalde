@@ -19,7 +19,7 @@ class RoutesTest extends TestCase
 
     use RefreshDatabase;
     
-    public function testRouteHome ()
+    public function testRouteHome()
     {
         $response = $this->get('/');
 
@@ -28,12 +28,12 @@ class RoutesTest extends TestCase
             ->assertSee('hello');
     }
 
-    public function testRouteBio ()
-    {
-        $response = $this->get('/biography');
+    // public function testRouteBiography()
+    // {
+    //     $response = $this->get('/biography');
 
-        $response->assertStatus(200)
-            ->assertViewIs('BioForm');
+    //     $response->assertStatus(200)
+    //         ->assertViewIs('BioForm');
             
-    }
+    // }
 }
