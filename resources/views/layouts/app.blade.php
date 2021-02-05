@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!doctype html>
+=======
+<!DOCTYPE html>
+>>>>>>> 259dab4140375fc565a4525cff9b39e659095ca1
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -7,7 +11,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>{{ config('app.name', 'Laravel') }}</title>
+=======
+    <title>CSM Barcelona</title>
+>>>>>>> 259dab4140375fc565a4525cff9b39e659095ca1
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +32,11 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
+<<<<<<< HEAD
                     {{ config('app.name', 'Laravel') }}
+=======
+                    CSM Barcelona
+>>>>>>> 259dab4140375fc565a4525cff9b39e659095ca1
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -74,7 +86,25 @@
                 </div>
             </div>
         </nav>
+<<<<<<< HEAD
 
+=======
+        <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Teacher's Biography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+>>>>>>> 259dab4140375fc565a4525cff9b39e659095ca1
         <main class="py-4">
             @yield('content')
         </main>
