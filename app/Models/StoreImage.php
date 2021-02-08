@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class David extends Model
+class StoreImage extends Model
 {
     use HasFactory;
 
-    public function course()
-    {
-        return $this->hasMany(Course::class);
-    }
+    protected $fillable = [
+        'user_name',
+        'user_image'
+    ];
 }

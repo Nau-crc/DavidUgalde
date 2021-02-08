@@ -20,10 +20,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// IMAGENES
+Route::get('store_image', 'StoreImageController@index');
+
+Route::post('store_image/insert_image', 'StoreImageController@insert_image');
+
+Route::get('store_image/fetch_image/{id}', 'StoreImageController@fetch_image');
+
+
+
 Route::get('/courses', function () {
     return view('courses.courses');
 });
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/createCourse', [CourseController::class, 'create'])->name('createCourse');
+Route::post('/Course/{id}', [CourseController::class, 'store'])->name('storeCourse');
+Route::patch('/edit/{id}', [CourseController::class, 'edit'])->name('editCourse');
+Route::post('/Course/{id}', [CourseController::class, 'update'])->name('updateCourse');
+
+

@@ -14,7 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $course = Course::all();
+        return view('courses.courses');
     }
 
     /**
@@ -24,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view ('courses.createCourse');
     }
 
     /**
@@ -35,7 +36,24 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => "required",
+            'description' => "required",
+            'video' => "required",
+            'image'=> "not required",
+            'docs'=>"not required"
+        ]);
+
+        Course::create([
+            
+            'title' =>$request->title,
+            'video' =>$request->video,
+            'description' =>$request->description,
+            'image' =>$request->image,
+            'docs' =>$request->docs
+        ]);
+
+        return redirect(route('storeCourse'));
     }
 
     /**
@@ -44,9 +62,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show(Course $course, $id)
     {
-        //
+        $course = Course::find($id);
+        return view('courses.courses', compact('course'));
     }
 
     /**
@@ -55,9 +74,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Course $course, $id)
     {
-        //
+        $course = Course::find($id);
+        return view('courses.formCourse', compact('course'));
     }
 
     /**
@@ -67,9 +87,27 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Course $course, $id)
     {
-        //
+        $course = Course::find($id);
+        $request->validate([
+            'title' => "required",
+            'description' => "required",
+            'video' => "required",
+            'image'=> "not required",
+            'docs'=>"not required"
+        ]);
+
+        $course->update([
+            
+            'title' =>$request->title,
+            'description' =>$request->description,
+            'video' =>$request->video,
+            'image' =>$request->image,
+            'docs' =>$request->docs
+        ]);
+
+        return redirect(route('updateCourse'));
     }
 
     /**
@@ -78,8 +116,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Course $course, $id)
     {
-        //
+        $course = Course::find($id);
+        $course->delete();
+        return redirect(route('/courses'));
     }
 }

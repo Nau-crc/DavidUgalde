@@ -14,7 +14,7 @@ class DavidController extends Controller
      */
     public function index()
     {
-        //
+        return view('Bio');
     }
 
     /**
