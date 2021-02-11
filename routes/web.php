@@ -19,6 +19,9 @@ use App\Http\Controllers\DavidController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/payment', function () {
+    return view('stripe');
+});
 
 
 // IMAGENES
