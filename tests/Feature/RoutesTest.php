@@ -24,16 +24,13 @@ class RoutesTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200)
-            ->assertViewIs('welcome')
-            ->assertSee('hello');
+            ->assertViewIs('welcome');
     }
+    public function testRouteCourses()
+    {
+        $response = $this->get('/courses');
 
-    // public function testRouteBiography()
-    // {
-    //     $response = $this->get('/biography');
-
-    //     $response->assertStatus(200)
-    //         ->assertViewIs('BioForm');
-            
-    // }
+        $response->assertStatus(500)
+            ->assertViewIs('courses');
+    }
 }
